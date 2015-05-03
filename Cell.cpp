@@ -12,19 +12,19 @@ NON_IDEAL_DC_VOLTAGE_SOURCE::NON_IDEAL_DC_VOLTAGE_SOURCE(Voltage VoltageInputVal
 }
 void NON_IDEAL_DC_VOLTAGE_SOURCE:Set_PotentialVoltage(Voltage VoltageInputValue)
 {
-  Potential_in_Volts=VoltageInputValue;
+  _PotentialInmVolts=VoltageInputValue;
 }
 Voltage NON_IDEAL_DC_VOLTAGE_SOURCE:Voltage Get_Potential(void)
 {
-  return Potential_in_Volts;
+  return _PotentialInmVolts;
 }
 void NON_IDEAL_DC_VOLTAGE_SOURCE:Set_internal_Resistance(InternalResistance InternalResistanceInputValue)
 {
-  InternalResistance_in_mOhm=InternalResistanceInputValue;
+  _InternalResistanceInmOhms=InternalResistanceInputValue;
 }
 InternalResistance NON_IDEAL_DC_VOLTAGE_SOURCE:InternalResistance Get_internal_Resistance(void)
 {
-  return InternalResistanceInputValue;
+  return _InternalResistanceInmOhms;
 }
 }//DC_VOLTAGE_SOURCE
   }//CircuitElement

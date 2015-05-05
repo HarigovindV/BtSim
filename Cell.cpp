@@ -1,15 +1,16 @@
 #include "Cell.h"
-
+#include "GlobalDeclarations.h"
 namespace Simulator{
   namespace CircuitElement{
 NON_IDEAL_DC_VOLTAGE_SOURCE::NON_IDEAL_DC_VOLTAGE_SOURCE()
 {
-  NON_IDEAL_DC_VOLTAGE_SOURCE((Voltage)10,(InternalResistance)10);
+  NON_IDEAL_DC_VOLTAGE_SOURCE((Voltage)10);
 }  
-NON_IDEAL_DC_VOLTAGE_SOURCE::NON_IDEAL_DC_VOLTAGE_SOURCE(Voltage VoltageInputValue,InternalResistance InternalResistanceInputValue)
+NON_IDEAL_DC_VOLTAGE_SOURCE::NON_IDEAL_DC_VOLTAGE_SOURCE(Voltage VoltageInputValue)
 {
   SetPotentialVoltage(VoltageInputValue);
-  SetInternalResistance(InternalResistanceInputValue);
+ // SetInternalResistance(Simulator::Globals::DefaultInternalResistanceValueInmAh);
+
 }
 void NON_IDEAL_DC_VOLTAGE_SOURCE::SetPotentialVoltage(Voltage VoltageInputValue)
 {

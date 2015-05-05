@@ -3,11 +3,12 @@
 #include "Cell.h"
 namespace Simulator{
 	namespace Globals{
-Voltage MaximumCellVoltage=12000;
-Voltage MinimumCellVoltage=7500;
-BatteryCapacity MaximumCellCapacity=4500;
-BatteryCapacity MinimumCellCapacity=0;
-float VoltageDropPermAh=(MaximumCellVoltage-MinimumCellVoltage)/(MaximumCellCapacity-MinimumCellCapacity);
+static const Voltage MaximumCellVoltage=12000;
+static const Voltage MinimumCellVoltage=7500;
+static const BatteryCapacity MaximumCellCapacity=4500;
+static const BatteryCapacity MinimumCellCapacity=0;
+static const float VoltageDropPermAh=(MaximumCellVoltage-MinimumCellVoltage)/(MaximumCellCapacity-MinimumCellCapacity);
+static const InternalResistance DefaultInternalResistanceValueInmAh;
 	}//Globals
 }//Simulator
 #endif

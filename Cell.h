@@ -4,12 +4,12 @@
 #include "Resistor.h"
 typedef std::int16_t Voltage;
 typedef std::uint16_t BatteryCapacity;
+typedef Simulator::CircuitElement::PURELY_IMPEDANCE_ONLY_ELEMENT InternalResistance;
 namespace Simulator{
   namespace CircuitElement{
-typedef struct PURELY_IMPEDANCE_ONLY_ELEMENT InternalResistance;
 struct NON_IDEAL_DC_VOLTAGE_SOURCE{
 NON_IDEAL_DC_VOLTAGE_SOURCE();
-NON_IDEAL_DC_VOLTAGE_SOURCE(Voltage VoltageInputValue,InternalResistance InternalResistanceInputValue);
+NON_IDEAL_DC_VOLTAGE_SOURCE(Voltage VoltageInputValue);
 void SetPotentialVoltage(Voltage);
 Voltage GetPotential(void);
 void SetInternalResistance(InternalResistance);

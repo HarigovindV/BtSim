@@ -115,9 +115,9 @@ void RankCellsBasedOnVoltage(Simulator::CellHolder * In)
 			}
 			else											//132
 			{
-				In[0].CellVoltageRank=2;
+				In[0].CellVoltageRank=1;
 				In[1].CellVoltageRank=3;	
-				In[2].CellVoltageRank=1;
+				In[2].CellVoltageRank=2;
 			}
 		}		
 	}

@@ -4,17 +4,20 @@ namespace Simulator{
 PURELY_IMPEDANCE_ONLY_ELEMENT::PURELY_IMPEDANCE_ONLY_ELEMENT()
 {
   PURELY_IMPEDANCE_ONLY_ELEMENT(10);
-}  
-PURELY_IMPEDANCE_ONLY_ELEMENT::SetResistance(Resistance ResistanceInputValue)
+}
+PURELY_IMPEDANCE_ONLY_ELEMENT::PURELY_IMPEDANCE_ONLY_ELEMENT(Resistance In)
+{
+	_ResistanceInmOhms=In;
+}
+void PURELY_IMPEDANCE_ONLY_ELEMENT::SetResistance(Resistance ResistanceInputValue)
 {
   _ResistanceInmOhms=ResistanceInputValue;
 }  
 
-PURELY_IMPEDANCE_ONLY_ELEMENT:Resistance GetResistance(void)
+Resistance PURELY_IMPEDANCE_ONLY_ELEMENT::GetResistance(void)
 {
   return _ResistanceInmOhms;
 }
-}//DC_VOLTAGE_SOURCE
   }//CircuitElement
 }//Simulator
  

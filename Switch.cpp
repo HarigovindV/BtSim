@@ -3,18 +3,18 @@ namespace Simulator{
   namespace CircuitElement{
 Switch::Switch()
 {
-  Switch(0);
+  SetSwitch((SwitchState)0);
 }  
-Switch::SetSwitch(SwitchState SwitchStateIPValue)
+void Switch::SetSwitch(SwitchState SwitchStateIPValue)
 {
   _SwitchState=SwitchStateIPValue;
 }  
 
-Switch:SwitchState GetSwitch(void)
+SwitchState Switch::GetSwitch(void)
 {
   return _SwitchState;
 }
-}//Switch
+
   }//CircuitElement
 }//Simulator
  

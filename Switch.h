@@ -6,10 +6,11 @@ namespace Simulator{
 typedef std::uint8_t SwitchState;  	
 struct Switch{
 Switch();
-SetSwitch(SwitchState);
+void SetSwitch(SwitchState);
 SwitchState GetSwitch(void);
 private:
-SwitchState SwitchState;
-}//Switch
+SwitchState _SwitchState;
+};//Switch
   }//CircuitElement
 }//Simulator
+#endif

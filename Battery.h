@@ -59,8 +59,7 @@ void UpdateCellCapacityAndVoltagesEverySecond();
 void UpdateGUI(void);
 };
 }
-void RankCellsBasedOnVoltage(Simulator::CellHolder * In);
-void SortCellsbyRank(Simulator::CellHolder * In);
+
 
 
 

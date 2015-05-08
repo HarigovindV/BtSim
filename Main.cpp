@@ -5,7 +5,7 @@ int main()
 {
 	std::printf("Battery Simulator Program");
 	std::printf("Reading BatteryData.txt");
-	FILE * ConfigFIle=fopen("E:\BatteryData.txt","r");
+	FILE * ConfigFIle=fopen("BatteryData.txt","r");
 	if(ConfigFIle==0)
 	{
 		std::printf("Error Reading BatteryData.txt\r\nProgram Will Now Exit");

@@ -1,5 +1,5 @@
 #include "Battery.h"
-
+#include "Utils.h"
 #include "GlobalDeclarations.h"
 
 #include <cstdio>

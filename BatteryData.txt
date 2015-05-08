@@ -1,0 +1,1 @@
+CellOne=12000&CellTwo=12000&CellThree=12000&ResistorOne=12000&ResistorTwo=12000&ResistorThree=12000&LoadResistor=12000&Tempo=12000

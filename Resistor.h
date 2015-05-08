@@ -1,10 +1,14 @@
 #ifndef BSIM_RESISTOR_H
 #define BSIM_RESISTOR_H
 #include <cstdint>
-typedef std::uint16_t Resistance;
+typedef double Resistance;
 namespace Simulator{
   namespace CircuitElement{
 typedef struct PURELY_IMPEDANCE_ONLY_ELEMENT Resistor;
+/**
+	Abstraction For Resistor.Has Only single Property,Resistance which is Implemented via 
+	private variable accessible via Properties.
+*/
 struct PURELY_IMPEDANCE_ONLY_ELEMENT{
 PURELY_IMPEDANCE_ONLY_ELEMENT();
 PURELY_IMPEDANCE_ONLY_ELEMENT(Resistance In);

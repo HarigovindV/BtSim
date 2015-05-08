@@ -4,17 +4,19 @@ namespace Simulator{
   namespace CircuitElement{
 NON_IDEAL_DC_VOLTAGE_SOURCE::NON_IDEAL_DC_VOLTAGE_SOURCE()
 {
-  NON_IDEAL_DC_VOLTAGE_SOURCE((Voltage)10);
+  NON_IDEAL_DC_VOLTAGE_SOURCE(10000);
+  SetInternalResistance(Simulator::Globals::DefaultInternalResistanceValueInmAh);
 }  
 NON_IDEAL_DC_VOLTAGE_SOURCE::NON_IDEAL_DC_VOLTAGE_SOURCE(Voltage VoltageInputValue)
 {
   SetPotentialVoltage(VoltageInputValue);
- // SetInternalResistance(Simulator::Globals::DefaultInternalResistanceValueInmAh);
-
 }
 void NON_IDEAL_DC_VOLTAGE_SOURCE::SetPotentialVoltage(Voltage VoltageInputValue)
 {
   _PotentialInmVolts=VoltageInputValue;
+  BatteryCapacity Current=(Simulator::Globals::MaximumCellCapacity);
+  Current-=(Simulator::Globals::MaximumCellVoltage-VoltageInputValue)/Simulator::Globals::VoltageDropPermAh;
+  SetBatteryCapacity(Current);
 }
 Voltage NON_IDEAL_DC_VOLTAGE_SOURCE::GetPotential(void)
 {
@@ -35,6 +37,14 @@ void NON_IDEAL_DC_VOLTAGE_SOURCE::SetBatteryCapacity(BatteryCapacity BatteryCapa
 BatteryCapacity NON_IDEAL_DC_VOLTAGE_SOURCE::GetBatteryCapacity(void)
 {
   return _BatteryCapacityInmAh;
+}
+void NON_IDEAL_DC_VOLTAGE_SOURCE::SetCurrent(Current CellCurrentInputValue)
+{
+  _CurrentInmAh=CellCurrentInputValue;
+}
+Current NON_IDEAL_DC_VOLTAGE_SOURCE::GetCurrent(void)
+{
+  return _CurrentInmAh;
 }
 
   }//CircuitElement

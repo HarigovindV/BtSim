@@ -1,33 +1,17 @@
 #include "Battery.h"
 
 
-/*
-StartSimulation()
-{
-	T1,T2;
-	while(1)
-	{
-		if(T2!=T1)
-		{
-			UpdateGUI=true;
-			RankCellsBasedOnVoltage();
-			SortCellsBasedOnRank();
-			SwitchStates();
-			DeduceCurrents();
-			UpdateCellCapacityAndVoltagesEveryHour();
-
-		}
-		if(UpdateGUI)
-		{
-			UpdateGUI=false;
-
-		}
-	}
-}
+/**
+Computes the Ranks of Cells based On Voltages
+Total 13 Different Rankings are Possible
+if 1 to 3 Ranks are Assigned 3*2*1 =6 Possbile permutations
+if 1 and 2 Ranks are assigned (Two Cells may have identical Voltages) 6 Possible permutations
+if All cells have same voltage 1 permutations
+	
 */
 void RankCellsBasedOnVoltage(Simulator::CellHolder * In)
 {
-	if(In[0].Cell.GetPotential() == In[1].Cell.GetPotential() == In[2].Cell.GetPotential())	//111
+	if(In[0].Cell.GetPotential() == In[1].Cell.GetPotential() && In[1].Cell.GetPotential() == In[2].Cell.GetPotential())	//111
 	{
 		In[0].CellVoltageRank=	
 		In[1].CellVoltageRank=
@@ -132,6 +116,8 @@ void SortCellsbyRank(Simulator::CellHolder * In)
 	{
 		if(In[i].CellVoltageRank==1)
 		{
+			if(!Rank1AlreadyAssignedTwice)
+			{
 			if(!Rank1AlreadyAssigned)
 			{
 				Temp[0]=In[i];
@@ -146,6 +132,11 @@ void SortCellsbyRank(Simulator::CellHolder * In)
 				}
 				Temp[1]=In[i];	
 				Rank1AlreadyAssignedTwice=true;
+			}
+			}
+			else
+			{
+				Temp[2]=In[i];
 			}
 		}
 		else if(In[i].CellVoltageRank==2)

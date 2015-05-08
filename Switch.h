@@ -3,7 +3,10 @@
 #include <cstdint>
 namespace Simulator{
   namespace CircuitElement{
-typedef std::uint8_t SwitchState;  	
+typedef std::uint8_t SwitchState;
+/**
+	Abstraction For Switch.Has Only single Property,SwitchState which holds the Switch the ON/OFF Status.
+*/
 struct Switch{
 Switch();
 void SetSwitch(SwitchState);

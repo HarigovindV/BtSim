@@ -1,0 +1,20 @@
+SetVoltages()
+Run()
+{
+struct  CellHolder
+{
+	BatteryCell Cell;
+	std::uint8_t CellVoltageRank;
+}CellSorter[3]={{V1,1},{V2,2},{V3,3}};
+
+
+}
+RankCellsBasedOnVoltage(CellHolder & In)
+{
+	if(CellSorter[0] == CellSorter[1] == CellSorter[2])	
+	{
+		CellSorter[0].CellVoltageank=	
+		CellSorter[1].CellVoltageank=
+		CellSorter[2].CellVoltageank=0
+	}
+}

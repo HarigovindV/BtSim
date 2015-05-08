@@ -109,7 +109,7 @@ void RankCellsBasedOnVoltage(Simulator::CellHolder * In)
 }
 void SortCellsbyRank(Simulator::CellHolder * In)
 {
-	Simulator::CellHolder Temp[3]={};
+	Simulator::CellHolder Temp[3];
 	bool Rank1AlreadyAssigned=false,Rank2AlreadyAssigned=false,
 	Rank1AlreadyAssignedTwice=false;
 	for(std::uint8_t i=0;i<3;i++)

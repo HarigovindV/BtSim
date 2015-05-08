@@ -183,7 +183,7 @@ void Battery::UpdateCellCapacityAndVoltagesEverySecond()
 void  Battery::UpdateGUI(void)
 {
 	printf("\r\nBattery Status\r\n");
-	printf("\r\nLoad Current\r\n",LoadCurrent);
+	printf("\r\nLoad Current %.6f\r\n",LoadCurrent);
 	printf("\r\nCells Status\r\n");
 	printf("Cell One Status\r\n");
 	printf("Voltage = %.6f Current = %.6f\r\n",CellOne.GetPotential(),CellOne.GetCurrent());

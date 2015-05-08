@@ -139,8 +139,8 @@ void Battery::ComputeCurrentsDrawnFromIndividualCells(Simulator::CellHolder * In
 			}
 		}
 	}
-	float TotalLoadCurrent=DCBusVoltage/TotalCircutResistance;
-	Voltage VoltageDropBetweenThreeCells=DCBusVoltage-(TotalLoadCurrent*ResistorLoad.GetResistance());
+	LoadCurrent=DCBusVoltage/TotalCircutResistance;
+	Voltage VoltageDropBetweenThreeCells=DCBusVoltage-(LoadCurrent*ResistorLoad.GetResistance());
 	if(SwitchOne.GetSwitch()==1)
 	{
 		CellOne.SetCurrent(VoltageDropBetweenThreeCells/TotalResistanceBranchOneComponent);
@@ -182,6 +182,8 @@ void Battery::UpdateCellCapacityAndVoltagesEverySecond()
 }
 void  Battery::UpdateGUI(void)
 {
+	printf("\r\nBattery Status\r\n");
+	printf("\r\nLoad Current\r\n",LoadCurrent);
 	printf("\r\nCells Status\r\n");
 	printf("Cell One Status\r\n");
 	printf("Voltage = %.6f Current = %.6f\r\n",CellOne.GetPotential(),CellOne.GetCurrent());
